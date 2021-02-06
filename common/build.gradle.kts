@@ -18,7 +18,8 @@ kotlin {
             kotlinOptions.jvmTarget = "11"
         }
     }
-    js("web") {
+    // Bug: work with LEGACY, not with IR
+    js("web", LEGACY) {
         browser()
     }
     sourceSets {
