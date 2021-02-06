@@ -18,16 +18,27 @@ kotlin {
             kotlinOptions.jvmTarget = "11"
         }
     }
+    js("web") {
+        browser()
+    }
     sourceSets {
         val commonMain by getting {
+            dependencies {
+            }
+        }
+        val commonTest by getting
+        val webMain by getting {
+            dependencies {
+            }
+        }
+        val webTest by getting
+        val desktopMain by getting {
             dependencies {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
             }
         }
-        val commonTest by getting
-        val desktopMain by getting
         val desktopTest by getting
     }
 }
