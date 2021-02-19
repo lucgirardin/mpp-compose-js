@@ -2,7 +2,7 @@ import org.jetbrains.compose.compose
 
 plugins {
     kotlin("multiplatform") version "1.4.30"
-    id("org.jetbrains.compose") version "0.3.0-build149"
+    id("org.jetbrains.compose") version "0.3.0-build154"
 }
 
 group = "com.macrofocus"
