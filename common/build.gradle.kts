@@ -3,8 +3,8 @@ import org.jetbrains.compose.compose
 val applyComposePlugin = true // Problem appear irrespectively of how the compose plugin is enabled
 plugins {
     val applyComposePlugin = true // Same as above: val applyComposePlugin: Boolean' can't be called in this context by implicit receiver.
-    kotlin("multiplatform") version "1.4.30"
-    id("org.jetbrains.compose") version "0.3.1" apply applyComposePlugin
+    kotlin("multiplatform") version "1.4.31"
+    id("org.jetbrains.compose") version "0.4.0-build171" apply applyComposePlugin
 }
 
 group = "com.macrofocus"
@@ -16,7 +16,7 @@ repositories {
 
 kotlin {
     jvm("desktop") {
-        if(!applyComposePlugin) {
+        if (!applyComposePlugin) {
             apply<org.jetbrains.compose.ComposePlugin>()
         }
         compilations.all {
@@ -32,7 +32,8 @@ kotlin {
                 "-Xskip-prerelease-check",
                 "-P", "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
             )
-        }  }
+        }
+    }
     sourceSets {
         val commonMain by getting {
             dependencies {

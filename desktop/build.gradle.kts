@@ -2,8 +2,8 @@ import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("multiplatform") version "1.4.30"
-    id("org.jetbrains.compose") version "0.3.1"
+    kotlin("multiplatform") version "1.4.31"
+    id("org.jetbrains.compose") version "0.4.0-build171"
 }
 
 group = "com.macrofocus"
