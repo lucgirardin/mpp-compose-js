@@ -4,7 +4,7 @@ val applyComposePlugin = true // Problem appear irrespectively of how the compos
 plugins {
     val applyComposePlugin = true // Same as above: val applyComposePlugin: Boolean' can't be called in this context by implicit receiver.
     kotlin("multiplatform") version "1.4.31"
-    id("org.jetbrains.compose") version "0.4.0-build176" apply applyComposePlugin
+    id("org.jetbrains.compose") version "0.4.0-build177" apply applyComposePlugin
 }
 
 group = "com.macrofocus"
