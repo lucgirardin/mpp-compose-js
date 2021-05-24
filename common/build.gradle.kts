@@ -3,8 +3,8 @@ import org.jetbrains.compose.compose
 val applyComposePlugin = true // Problem appear irrespectively of how the compose plugin is enabled
 plugins {
     val applyComposePlugin = true // Same as above: val applyComposePlugin: Boolean' can't be called in this context by implicit receiver.
-    kotlin("multiplatform") version "1.4.32"
-    id("org.jetbrains.compose") version "0.0.0-web-dev-11" apply applyComposePlugin
+    kotlin("multiplatform") version "1.5.0"
+    id("org.jetbrains.compose") version "0.4.0-build209" apply applyComposePlugin
 }
 
 group = "com.macrofocus"
@@ -26,13 +26,13 @@ kotlin {
     // Bug: work with LEGACY, not with IR (or both)
     js("web", IR) {
         browser()
-        compilations.all {
-            // This does not help!
-            kotlinOptions.freeCompilerArgs += arrayOf(
-                "-Xskip-prerelease-check",
-                "-P", "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
-            )
-        }
+//        compilations.all {
+//            // This does not help!
+//            kotlinOptions.freeCompilerArgs += arrayOf(
+//                "-Xskip-prerelease-check",
+//                "-P", "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+//            )
+//        }
     }
     sourceSets {
         val commonMain by getting {
@@ -42,8 +42,8 @@ kotlin {
         val commonTest by getting
         val webMain by getting {
             dependencies {
-                implementation(compose.web.web)
-                implementation(compose.runtime)
+//                implementation(compose.web.web)
+//                implementation(compose.runtime)
             }
         }
         val webTest by getting
