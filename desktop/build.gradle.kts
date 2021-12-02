@@ -18,7 +18,8 @@ kotlin {
     sourceSets {
         val jvmMain by getting {
             dependencies {
-                implementation(project(":common"))
+//                implementation(project(":common"))
+                implementation("com.macrofocus:common:1.0.0")
                 implementation(compose.desktop.currentOs)
             }
         }
