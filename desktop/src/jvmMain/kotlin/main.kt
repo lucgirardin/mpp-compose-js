@@ -1,6 +1,11 @@
 import com.macrofocus.common.App
-import androidx.compose.desktop.Window
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
 
-fun main() = Window {
-    App()
+fun main() = application {
+    Window(
+        onCloseRequest = ::exitApplication
+    ) {
+        App()
+    }
 }
